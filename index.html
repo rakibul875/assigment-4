@@ -50,9 +50,9 @@
     <hr class="my-3 w-[90%] mx-auto">
     <main class="w-[90%] mx-auto">
         <div class="">
-            <button class="btn btn-soft bg-blue-700 text-white">All</button>
-            <button class="btn btn-soft ml-3">Interview</button>
-            <button class="btn btn-soft ml-3">Rejected</button>
+            <button onclick="toggling('all-btn')" id="all-btn" class="btn btn-soft bg-blue-700 text-white">All</button>
+            <button onclick="toggling('interview-btn')" id="interview-btn" class="btn btn-soft bg-gray-200 ml-3">Interview</button>
+            <button onclick="toggling('rejected-btn')" id="rejected-btn" class="btn btn-soft bg-gray-200 ml-3">Rejected</button>
         </div>
         <section id="total-jobs">
             <div class="md:flex justify-between mt-5 bg-zinc-100 p-8">
