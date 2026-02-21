@@ -34,15 +34,15 @@
             <div class="grid grid-cols-3 gap-4 mt-4">
                 <div class="bg-base-200 p-3 rounded-2xl">
                     <p>Total</p>
-                    <p class="text-[#002C5C] font-bold text-2xl">0</p>
+                    <p id="total" class="text-[#002C5C] font-bold text-2xl">0</p>
                 </div>
                 <div class="bg-base-200 p-3 rounded-2xl">
                     <p>Interview</p>
-                    <p class="text-[#10B981] font-bold text-2xl">0</p>
+                    <p id="interview" class="text-[#10B981] font-bold text-2xl">0</p>
                 </div>
                 <div class="bg-base-200 p-3 rounded-2xl">
                     <p>Rejected</p>
-                    <p class="text-[#EF4444] font-bold text-2xl">0</p>
+                    <p id="rejected" class="text-[#EF4444] font-bold text-2xl">0</p>
                 </div>
             </div>
         </section>
@@ -54,7 +54,7 @@
             <button class="btn btn-soft ml-3">Interview</button>
             <button class="btn btn-soft ml-3">Rejected</button>
         </div>
-        <section>
+        <section id="total-jobs">
             <div class="md:flex justify-between mt-5 bg-zinc-100 p-8">
                 <div class="space-y-4">
                     <div class="">
@@ -272,6 +272,8 @@
             </div>
         </section>
     </main>
+    <!-- javascript link -->
+     <script src="./jobCount.js"></script>
 </body>
 
 </html>
