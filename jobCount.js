@@ -41,11 +41,22 @@ function totalJobsCircular() {
     else if(currentStatus==='rejected-btn'){
         totalJob.innerText=rejectedList.length + `of ${total}`
     }
+    const noJobSection=document.getElementById('no-job-section')
+    if(currentStatus==="interview-btn" && interviewList.length===0){
+        noJobSection.classList.remove('hidden')
+    }
+    else if(currentStatus==='rejected-btn'&& rejectedList.length===0){
+        noJobSection.classList.remove('hidden')
+    }
+    else if(currentStatus==='all-btn' && totalJobs.children.length===0){
+        noJobSection.classList.remove('hidden')
+    }
+    else{
+        noJobSection.classList.add('hidden')
+    }
 }
 totalJobsCircular()
   
-
-
 
 function toggling(id) {
     allButton.classList.remove('bg-blue-700', 'text-white')
