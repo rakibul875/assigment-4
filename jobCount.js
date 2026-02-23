@@ -135,7 +135,7 @@ function renderThriving() {
                             •
                             $130,000 - $175,000</p>
     
-                            <p class="status btn bg-base-300 border-none">${interview.statusName}</p>
+                            <p class="status btn bg-base-300 border-none w-[113px]">${interview.statusName}</p>
                             <p class="work text-neutral/50 mt-2">Build cross-platform mobile applications using React Native.
                                 Work on products used by millions of
                                 users worldwide.</p>
@@ -172,7 +172,7 @@ function renderRejected() {
                         •
                         $130,000 - $175,000</p>
 
-                        <p class="status btn bg-base-300 border-none">${rejected.statusName}</p>
+                        <p class="status btn bg-base-300 border-none w-[113px]">${rejected.statusName}</p>
                         <p class="work text-neutral/50 mt-2">Build cross-platform mobile applications using React Native.
                             Work on products used by millions of
                             users worldwide.</p>
