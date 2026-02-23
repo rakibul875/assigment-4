@@ -14,18 +14,39 @@ const mainSection = document.querySelector('main')
 
 let filterSection = document.getElementById('add-thriving')
 
+//all buttons
+const allButton = document.getElementById('all-btn')
+const interviewButton = document.getElementById('interview-btn')
+const rejectedButton = document.getElementById('rejected-btn')
+
+//total count jobs
+let totalJob=document.getElementById('total-job')
+
+
+
 function totalJobsCircular() {
     totalCount.innerText = totalJobs.children.length
     interviewCount.innerText = interviewList.length;
     rejectedCount.innerText = rejectedList.length;
+
+    const total= totalJob.innerText === totalJobs.children.length + "jobs"
+
+     if(currentStatus==='all-btn'){
+      totalJob.innerText = totalJobs.children.length +  `${total}Jobs`
+    }
+    else if(currentStatus=="interview-btn"){
+        totalJob.innerText=interviewList.length + `of ${total}`
+        
+    }
+    else if(currentStatus==='rejected-btn'){
+        totalJob.innerText=rejectedList.length + `of ${total}`
+    }
 }
 totalJobsCircular()
+  
 
-//toggling section
 
-const allButton = document.getElementById('all-btn')
-const interviewButton = document.getElementById('interview-btn')
-const rejectedButton = document.getElementById('rejected-btn')
+
 function toggling(id) {
     allButton.classList.remove('bg-blue-700', 'text-white')
     interviewButton.classList.remove('bg-blue-700', 'text-white')
@@ -55,6 +76,7 @@ function toggling(id) {
         filterSection.classList.remove('hidden')
         renderRejected()
     }
+    totalJobsCircular()
 }
 
 mainSection.addEventListener('click', function (event) {
