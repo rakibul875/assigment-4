@@ -40,6 +40,9 @@ function toggling(id) {
     if(id=='interview-btn'){
         totalJobs.classList.add('hidden')
         filterSection.classList.remove('hidden')
+        renderThriving()
+        
+        
     }
     else if(id=="all-btn"){
         totalJobs.classList.remove('hidden')
@@ -69,14 +72,19 @@ mainSection.addEventListener('click', function (event) {
             statusName:"Interview",
             workName,
         }
-
+        console.log(currentStatus)
         const jobList = interviewList.find(item => item.titleName === cardInfo.titleName)
         if (!jobList) {
             interviewList.push(cardInfo)
         }
+        console.log(rejectedList.length)
         rejectedList = rejectedList.filter(item => item.titleName != cardInfo.titleName)
+        console.log(rejectedList.length)
+        if(currentStatus=="rejected-btn"){
+            renderRejected()
+        }
         totalJobsCircular()
-        renderThriving()
+        // renderThriving()
     }
 
     else if (event.target.classList.contains("rejected-button")) {
@@ -111,42 +119,45 @@ mainSection.addEventListener('click', function (event) {
 
 function renderThriving() {
     filterSection.innerHTML = ``
-    for (let interview of interviewList) {
-        let div = document.createElement('div')
-        div.className = 'md:flex justify-between mt-5 bg-zinc-100 p-8'
-        div.innerHTML = `
-                <div class="space-y-4">
-                    <div class="">
-                        <p class="name text-[#002C5C] font-semibold text-4">${interview.titleName}</p>
-                        <p class="job-name text-neutral/50">React Native Developer</p>
+    if(interviewList.length >0){
+        for (let interview of interviewList) {
+            let div = document.createElement('div')
+            div.className = 'md:flex justify-between mt-5 bg-zinc-100 p-8'
+            div.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="">
+                            <p class="name text-[#002C5C] font-semibold text-4">${interview.titleName}</p>
+                            <p class="job-name text-neutral/50">React Native Developer</p>
+                        </div>
+                        <p class="celery text-neutral/50">Remote
+                            •
+                            Full-time
+                            •
+                            $130,000 - $175,000</p>
+    
+                            <p class="status btn bg-base-300 border-none">${interview.statusName}</p>
+                            <p class="work text-neutral/50 mt-2">Build cross-platform mobile applications using React Native.
+                                Work on products used by millions of
+                                users worldwide.</p>
+    
+                        <div class="flex gap-4">
+                            <button class="interview-button btn btn-outline btn-success">interview</button>
+                            <button class="rejected-button btn btn-outline btn-error">Rejected</button>
+                        </div>
                     </div>
-                    <p class="celery text-neutral/50">Remote
-                        •
-                        Full-time
-                        •
-                        $130,000 - $175,000</p>
-
-                        <p class="status btn bg-base-300 border-none">${interview.statusName}</p>
-                        <p class="work text-neutral/50 mt-2">Build cross-platform mobile applications using React Native.
-                            Work on products used by millions of
-                            users worldwide.</p>
-
-                    <div class="flex gap-4">
-                        <button class="interview-button btn btn-outline btn-success">interview</button>
-                        <button class="rejected-button btn btn-outline btn-error">Rejected</button>
+                    <div class="mt-4">
+                        <button class="btn"><i class="fa-solid fa-trash"></i></button>
                     </div>
-                </div>
-                <div class="mt-4">
-                    <button class="btn"><i class="fa-solid fa-trash"></i></button>
-                </div>
-        `
-        filterSection.appendChild(div)
+            `
+            filterSection.appendChild(div)
+        }
     }
 }
 
 function renderRejected() {
     filterSection.innerHTML = ``
-    for (let rejected of rejectedList) {
+  if(rejectedList.length >0){
+      for (let rejected of rejectedList) {
         let div = document.createElement('div')
         div.className = 'md:flex justify-between mt-5 bg-zinc-100 p-8'
         div.innerHTML = `
@@ -177,4 +188,5 @@ function renderRejected() {
         `
         filterSection.appendChild(div)
     }
+  }
 }
