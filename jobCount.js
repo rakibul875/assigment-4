@@ -2,6 +2,8 @@ let interviewList = [];
 let rejectedList = [];
 let currentStatus="all-btn"
 
+//
+
 let totalCount = document.getElementById('total')
 let interviewCount = document.getElementById('interview')
 let rejectedCount = document.getElementById('rejected')
@@ -114,6 +116,13 @@ mainSection.addEventListener('click', function (event) {
         }
         totalJobsCircular()
         
+    }
+    //remove section
+    else if(event.target.closest('.remove-btn')){
+        const remove=event.target.closest('.remove-btn')
+        const removeParent=remove.parentNode.parentNode
+        removeParent.remove()
+        totalJobsCircular()
     }
 })
 
