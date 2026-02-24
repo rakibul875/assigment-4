@@ -1,0 +1,27 @@
+১/ getElementById, getElementsByClassName, এবং querySelector / querySelectorAll এর মধ্যে পার্থক্য দেওয়া হলো...
+    1.getElementById --> দিয়ে একটা এলিমেন্ট কে দরা যাই।
+
+    2.getElementsByClassName ---> ক্লাস দিয়ে অনেক গোলা এলিমেন্ট দরা যাই।
+
+    3.querySelector --->শুধু প্রথম মেচিং  এলিমেন্ট দরে,ক্লাস দরে,ID দরে
+    
+    4.querySelectorAll --->মেচিং  এলিমেন্ট দরে 
+
+২/ DOM-এ নতুন element কিভাবে তৈরি এবং insert করা হয় তা হলো
+
+    1.element তৈরি (document.createElement("এলিমেন্ট এর নাম"))
+
+    2.Element এর content এড করা (ভেরিয়েবলের নাম.textContent = "কন্টেট")
+    
+    3.Element insert করা DOM এ (document.getElementById("ইডির নাম"))/ক্লাস হলে ক্লাস এর নাম
+        ভেরিয়েবলের নাম.appendChild(যে টা করতে হবে)--->একটা শেষে এড হবে
+
+3/ Event Bubbling হলো এমন একটা জিনিস যা দিয়ে এলিমেন্ট ইভেন্ট গটানো যাই...যাতে উজার ক্লিক করলে একটা নিদেষ্ট কাজ সম্পাদনা হয়...এবং এটা পেরেন্টের দিকে যায়...child → parent → document
+
+৪/ আনেক গুলা চাইল্ড এলিমেন্ট কে একটা একটা করে ইভেন্ট লিছেনার না দিয়ে একবারে সব গুলা এলিমেন্টে একসাথে ইভেন্ট লিছেনার এড করা হয়।
+
+৫/  preventDefault()--> এলিমেন্টে নিজের সাধারন কাজ বন্দ করে দেয়।।
+
+    stopPropagation()--> ইভেন্ট bubbling বন্ধ করে।।
+
+
