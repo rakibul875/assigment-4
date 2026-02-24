@@ -32,15 +32,15 @@ function totalJobsCircular() {
     const total= totalJobs.children.length
     totalJob.innerText=total
      if(currentStatus==='all-btn'){
-      totalJob.innerText = totalJobs.children.length + ` of ${total}`
+      totalJob.innerText = totalJobs.children.length +` Jobs `
 
     }
     else if(currentStatus=="interview-btn"){
-        totalJob.innerText=interviewList.length + ` of ${total}`
+        totalJob.innerText=interviewList.length + ` of ${total} Jobs`
         
     }
     else if(currentStatus==='rejected-btn'){
-        totalJob.innerText=rejectedList.length + ` of ${total}`
+        totalJob.innerText=rejectedList.length + ` of ${total} Jobs`
     }
     const noJobSection=document.getElementById('no-job-section')
     if(currentStatus==="interview-btn" && interviewList.length===0){
